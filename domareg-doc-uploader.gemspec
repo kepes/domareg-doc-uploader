@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Domareg::Doc::Uploader::VERSION
   spec.authors       = ["kepes.peter"]
   spec.email         = ["kepes.peter@codeplay.hu"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Send documents from local drive to domareg.hu viw API call. It cares about duplicates and check file hash against already stored documents. Script works on a folders rescursively where one folder name should be a domain name.}
+  spec.summary       = %q{Send documents from local drive to domareg.hu}
   spec.homepage      = ""
   spec.license       = "MIT"
 

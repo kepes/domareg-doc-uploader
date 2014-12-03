@@ -49,4 +49,4 @@ rescue OptionParser::InvalidOption, OptionParser::MissingArgument
 end
 
 path = ARGV[0] || '.'
-Domareg::Doc::Uploader::FolderUploader.upload(path, options[:key], options[:domain], options[:verbose])
+Domareg::Doc::Uploader::FolderUploader.upload(path, options[:key], options[:server], options[:verbose])

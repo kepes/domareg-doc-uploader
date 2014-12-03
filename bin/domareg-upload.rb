@@ -2,7 +2,8 @@ require 'domareg/doc/uploader/folder_uploader'
 require 'optparse'
 
 options = {
-  verbose: false
+  verbose: false,
+  check: true
 }
 
 optparse = OptionParser.new do |opts|
@@ -20,6 +21,10 @@ optparse = OptionParser.new do |opts|
 
   opts.on("-s SERVER", "--server DOMAIN", "Domreg server") do |v|
     options[:server] = v
+  end
+
+  opts.on("-c", "--check", "Turn off file date check on folder scan") do |v|
+    options[:check] = false
   end
 
   opts.on_tail("-h", "--help", "Show this message") do
@@ -49,4 +54,4 @@ rescue OptionParser::InvalidOption, OptionParser::MissingArgument
 end
 
 path = ARGV[0] || '.'
-Domareg::Doc::Uploader::FolderUploader.upload(path, options[:key], options[:server], options[:verbose])
+Domareg::Doc::Uploader::FolderUploader.upload(path, options[:key], options[:server], options[:verbose], options[:check])
